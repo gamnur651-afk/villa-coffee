@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villa Coffee | Уютная кофейня в центре Таганрога</title>
+  <meta name="description" content="Кофейня Вилла-Кофе на Петровской 34 в Таганроге. Свежесваренный кофе, завтраки весь день, свежая выпечка и европейский уют.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --bg-surface: #ffffff;
+      --terracotta: #c2593f;
+      --terracotta-dark: #9c3f27;
+      --olive: #5b6748;
+      --text: #2b2826;
+      --text-muted: #726b64;
+      --border: rgba(194, 89, 63, 0.15);
+      --font-title: 'Marcellus', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --shadow: 0 10px 30px rgba(43, 40, 38, 0.06);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Header */
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+    }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: var(--font-title); font-size: 1.6rem; color: var(--terracotta); text-decoration: none; font-weight: bold; letter-spacing: 0.05em; }
+    .nav-links a { color: var(--text); text-decoration: none; margin-left: 24px; font-weight: 500; font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--terracotta); }
+    .btn {
+      display: inline-block;
+      padding: 12px 26px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      font-size: 0.95rem;
+    }
+    .btn-terra { background: var(--terracotta); color: #fff; box-shadow: 0 4px 15px rgba(194, 89, 63, 0.3); }
+    .btn-terra:hover { background: var(--terracotta-dark); transform: translateY(-2px); }
+    .btn-outline { border: 1.5px solid var(--terracotta); color: var(--terracotta); }
+    .btn-outline:hover { background: var(--terracotta); color: #fff; }
+
+    /* Hero */
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, rgba(194, 89, 63, 0.08) 0%, transparent 60%);
+    }
+    .tag {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--olive);
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: var(--font-title);
+      font-size: 3.5rem;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+    .hero-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* Highlights */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 60px 0;
+    }
+    .feat-card {
+      background: var(--bg-surface);
+      padding: 32px 24px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .feat-card span { font-size: 2.2rem; display: block; margin-bottom: 12px; }
+    .feat-card h3 { font-family: var(--font-title); font-size: 1.3rem; margin-bottom: 8px; }
+    .feat-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* Menu */
+    .menu-section { padding: 60px 0; }
+    .section-head { text-align: center; margin-bottom: 40px; }
+    .section-head h2 { font-family: var(--font-title); font-size: 2.4rem; color: var(--text); }
+    .menu-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+    .tab-btn {
+      padding: 10px 22px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .tab-btn.active { background: var(--terracotta); color: #fff; border-color: var(--terracotta); }
+    .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .menu-item {
+      background: #fff;
+      padding: 20px 24px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .item-title { font-weight: 700; font-size: 1.05rem; }
+    .item-desc { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+    .item-price { font-family: var(--font-title); font-size: 1.25rem; font-weight: bold; color: var(--terracotta); white-space: nowrap; margin-left: 16px; }
+
+    /* Contacts & Location */
+    .location-box {
+      background: var(--bg-surface);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      padding: 48px 36px;
+      margin: 60px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+    .loc-info h2 { font-family: var(--font-title); font-size: 2.2rem; margin-bottom: 16px; }
+    .loc-item { margin-bottom: 16px; font-size: 1rem; color: var(--text-muted); }
+    .loc-item strong { color: var(--text); display: block; margin-bottom: 2px; }
+    .loc-btns { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.4rem; }
+      .features { grid-template-columns: 1fr; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .location-box { grid-template-columns: 1fr; padding: 28px 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand">VILLA COFFEE</a>
+      <div class="nav-links">
+        <a href="#menu">Меню</a>
+        <a href="#about">О кофейне</a>
+        <a href="#location">Как добраться</a>
+        <a href="tel:+79281129982" class="btn btn-terra" style="margin-left: 20px;">Позвонить</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="tag">Таганрог • ул. Петровская, 34</span>
+        <h1>Маленькая Италия<br>в самом сердце города</h1>
+        <p>Ароматный эспрессо, пышные круассаны и уютная атмосфера европейской виллы для ваших лучших утренних моментов.</p>
+        <div class="hero-btns">
+          <a href="#menu" class="btn btn-terra">Посмотреть меню</a>
+          <a href="https://vk.com/villa_coffee" target="_blank" class="btn btn-outline">Мы ВКонтакте</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="features" id="about">
+        <div class="feat-card">
+          <span>☕</span>
+          <h3>Премиальное зерно</h3>
+          <p>Классическая итальянская обжарка для глубокого и насыщенного кофейного вкуса.</p>
+        </div>
+        <div class="feat-card">
+          <span>🥐</span>
+          <h3>Завтраки и выпечка</h3>
+          <p>Свежие круассаны, хрустящие тосты и сытные перекусы в течение всего дня.</p>
+        </div>
+        <div class="feat-card">
+          <span>🌿</span>
+          <h3>Уют и комфорт</h3>
+          <p>Тёплый интерьер, летняя веранда на Петровской и приветливые бариста.</p>
+        </div>
+      </div>
+
+      <!-- Меню -->
+      <section class="menu-section" id="menu">
+        <div class="section-head">
+          <span class="tag">Наше меню</span>
+          <h2>Напитки и десерты</h2>
+        </div>
+
+        <div class="menu-tabs">
+          <button class="tab-btn active" onclick="showTab('coffee')">Кофе и Классика</button>
+          <button class="tab-btn" onclick="showTab('author')">Фирменные напитки</button>
+          <button class="tab-btn" onclick="showTab('pastry')">Выпечка и Завтраки</button>
+        </div>
+
+        <div id="tab-coffee" class="menu-grid">
+          <div class="menu-item">
+            <div>
+              <div class="item-title">Капучино Villa</div>
+              <div class="item-desc">Шелковистая молочная пенка и плотный эспрессо (300 мл)</div>
+            </div>
+            <div class="item-price">210 ₽</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="item-title">Флэт Уайт</div>
+              <div class="item-desc">Двойной шот эспрессо с горячим взбитым молоком (200 мл)</div>
+            </div>
+            <div class="item-price">220 ₽</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="item-title">Латте Карамель</div>
+              <div class="item-desc">Нежный кофе со сливочной карамелью (350 мл)</div>
+            </div>
+            <div class="item-price">230 ₽</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="item-title">Эспрессо Классико</div>
+              <div class="item-desc">Итальянская классика с густой ореховой пенкой</div>
+            </div>
+            <div class="item-price">140 ₽</div>
+          </div>
+        </div>
+
+        <div id="tab-author" class="menu-grid" style="display:none;">
+          <div class="menu-item">
+            <div>
+              <div class="item-title">Фисташковый Раф</div>
+              <div class="item-desc">Сливочный кофе с натуральной фисташковой пастой</div>
+            </div>
+            <div class="item-price">280 ₽</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="item-title">Цитрусовый Бамбл</div>
+              <div class="item-desc">Охлажденный апельсиновый сок, карамель и шот эспрессо</div>
+            </div>
+            <div class="item-price">270 ₽</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="item-title">Матча Латте на кокосовом</div>
+              <div class="item-desc">Японский церемониальный зелёный чай с кокосовым молоком</div>
+            </div>
+            <div class="item-price">260 ₽</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="item-title">Пряный какао с маршмеллоу</div>
+              <div class="item-desc">Тёплый десертный напиток с корицей и воздушным зефиром</div>
+            </div>
+            <div class="item-price">240 ₽</div>
+          </div>
+        </div>
+
+        <div id="tab-pastry" class="menu-grid" style="display:none;">
+          <div class="menu-item">
+            <div>
+              <div class="item-title">Круассан с миндальным кремом</div>
+              <div class="item-desc">Свежеиспеченный французский слоеный круассан</div>
+            </div>
+            <div class="item-price">220 ₽</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="item-title">Тост с лососем и авокадо</div>
+              <div class="item-desc">Хрустящий хлеб, крем-чиз, слабосоленый лосось и зелень</div>
+            </div>
+            <div class="item-price">340 ₽</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="item-title">Сырники со сметаной и ягодами</div>
+              <div class="item-desc">Нежные творожные сырники с малиновым соусом</div>
+            </div>
+            <div class="item-price">280 ₽</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="item-title">Чизкейк Нью-Йорк</div>
+              <div class="item-desc">Классический сливочный десерт на песочной основе</div>
+            </div>
+            <div class="item-price">260 ₽</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Локация -->
+      <div class="location-box" id="location">
+        <div class="loc-info">
+          <span class="tag">Ждём вас в гости</span>
+          <h2>Вилла-Кофе на Петровской</h2>
+          <div class="loc-item">
+            <strong>📍 Адрес:</strong>
+            г. Таганрог, ул. Петровская, 34
+          </div>
+          <div class="loc-item">
+            <strong>🕒 График работы:</strong>
+            Ежедневно: с 08:30 до 22:00
+          </div>
+          <div class="loc-item">
+            <strong>📞 Телефон:</strong>
+            +7 (928) 112-99-82
+          </div>
+          <div class="loc-btns">
+            <a href="https://yandex.ru/maps/org/172068794628" target="_blank" class="btn btn-terra">Маршрут на Яндекс.Картах</a>
+            <a href="https://vk.com/villa_coffee" target="_blank" class="btn btn-outline">Группа ВКонтакте</a>
+          </div>
+        </div>
+        <div style="background: rgba(194,89,63,0.08); border-radius: 16px; padding: 30px; text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 10px;">☕🍰</div>
+          <h3 style="font-family: var(--font-title); font-size: 1.4rem; margin-bottom: 8px;">Кофе навынос и в зале</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Скидка 10% на кофе в свой стаканчик (My cup, please). Дружелюбны к гостям с питомцами!</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Villa Coffee Таганрог. Демонстрационный прототип сайта.</p>
+    </div>
+  </footer>
+
+  <script>
+    function showTab(cat) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('tab-coffee').style.display = (cat === 'coffee') ? 'grid' : 'none';
+      document.getElementById('tab-author').style.display = (cat === 'author') ? 'grid' : 'none';
+      document.getElementById('tab-pastry').style.display = (cat === 'pastry') ? 'grid' : 'none';
+    }
+  </script>
+</body>
+</html>
